@@ -7,8 +7,13 @@ const mongoose= require('mongoose');
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/order');
 
-mongoose.connect('mongodb+srv://codecracker:nikhil%40532cluster0-jictm.mongodb.net/test?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://codecracker:nikhil@cluster0-jictm.mongodb.net/test?retryWrites=true&w=majority',{
     useMongoClient: true
+}).then(() => {
+    console.log("Mongo successfully connected");
+  })
+  .catch(err => {
+    console.log(err);
 });
 
 app.use(morgan('dev'));
