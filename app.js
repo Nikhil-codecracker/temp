@@ -15,6 +15,7 @@ mongoose.connect('mongodb+srv://codecracker:nikhil@cluster0-jictm.mongodb.net/te
   .catch(err => {
     console.log(err);
 });
+mongoose.Promise = global.Promise;
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
